@@ -40,7 +40,6 @@ export class UserAddComponent implements OnInit {
 
   onAddUser() {
     let request = FormValue.get(this.registrationForm, true);
-
     let req: User = {
       firstName: request.firstName,
       lastName: request.lastName,
