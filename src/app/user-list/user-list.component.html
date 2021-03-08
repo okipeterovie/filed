@@ -1,0 +1,38 @@
+<div class="table-responsive">
+  <div class="user-item">
+    <br>
+    <div class="text-center">
+      <button type="button" (click)="redirect('/add-user')" class="btn btn-primary">Add Users</button>
+    </div>
+    <br>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Index</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone Number Cvv</th>
+          <th scope="col">Monthly Advertising Budget</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let user of users | slice: (tablePage-1) * tablePageSize : (tablePage-1) * tablePageSize + tablePageSize; let i= index;">
+          <th>{{i+1}}</th>
+          <td>{{user.firstName}}</td>
+          <td>{{user.lastName}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.phoneNumberCvv}}</td>
+          <td>{{user.monthlyAdvertisingBudget}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <ngb-pagination class="d-flex flex-wrap justify-content-center" [(page)]="tablePage" [pageSize]="tablePageSize"
+      [collectionSize]="users.length" [rotate]="true" [boundaryLinks]="true">
+    </ngb-pagination>
+  </div>
+</div>
+<br>
+
+<!-- <button (click)="add.emit()" data-test="add-button">Add to Collection</button> -->

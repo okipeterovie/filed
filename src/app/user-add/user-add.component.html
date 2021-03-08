@@ -1,0 +1,60 @@
+<hr>
+
+<br>
+<div class="card">
+  <div class="card-header text-center">
+    ADD USERS
+  </div>
+  <br>
+  <div class="text-center">
+    <button type="button" class="btn btn-secondary" (click)="redirect('/')">Cancel</button>
+  </div>
+  <br>
+  <div class="card-body">
+    <form [formGroup]="registrationForm" (ngSubmit)="onAddUser()">
+      <div class="form-row">
+        <div class="col-md-6">
+          <label for="inputFirstName" class="form-label">First Name</label>
+          <input type="text" id="firstName" formControlName="firstName" placeholder="First Name" [ngClass]="registrationForm.controls.firstName.invalid ? 
+            'form-control is-invalid form-control-lg':'form-control is-valid form-control-lg'">
+        </div>
+        <br>
+        <div class="col-md-6">
+          <label for="inputLastName" class="form-label">Last Name</label>
+          <input type="text" id="lastName" formControlName="lastName" placeholder="Last Name" [ngClass]="registrationForm.controls.lastName.invalid ? 
+          'form-control is-invalid form-control-lg':'form-control is-valid form-control-lg'">
+        </div>
+      </div>
+      <br>
+      <div class="form-row">
+        <div class="col-md-12">
+          <label for="inputEmail" class="form-label">Email</label>
+          <input type="email" id="email" formControlName="email" placeholder="email" [ngClass]="registrationForm.controls.email.invalid ? 
+          'form-control is-invalid form-control-lg':'form-control is-valid form-control-lg'">
+        </div>
+      </div>
+      <br>
+      <div class="form-row">
+        <div class="col-md-6">
+          <label for="inputPhoneNumberCvv" class="form-label">Phone Number Cvv</label>
+          <input type="tel" id="phoneNumberCvv" formControlName="phoneNumberCvv" placeholder="Phone Number Cvv"
+            [ngClass]="registrationForm.controls.phoneNumberCvv.invalid ? 
+          'form-control is-invalid form-control-lg':'form-control is-valid form-control-lg'">
+        </div>
+        <br>
+        <div class="col-md-6">
+          <label for="inputMonthlyAdvertisingBudget" class="form-label">Monthly Advertising Budget</label>
+          <input type="number" id="monthlyAdvertisingBudget" formControlName="monthlyAdvertisingBudget"
+            placeholder="Monthly Advertising Budget" [ngClass]="registrationForm.controls.monthlyAdvertisingBudget.invalid ? 
+            'form-control is-invalid form-control-lg':'form-control is-valid form-control-lg'">
+        </div>
+      </div>
+      <br>
+      <div class="form-row">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary" [disabled]="registrationForm.invalid">Add User</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

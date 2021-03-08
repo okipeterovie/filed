@@ -1,0 +1,27 @@
+<div class="wrapper">
+
+  <app-top-menu></app-top-menu>
+  <br>
+  <br>
+  <br>
+
+  <div class="main-panel">
+    <div class="main-content">
+      <div class="content-wrapper">
+        <div class="container">
+
+          <!-- <app-user-list class="book-list" [users]="user$ | async" (add)="onAddUser()"></app-user-list> -->
+          <app-user-list class="book-list" [users]="user$ | async"></app-user-list>
+
+          <router-outlet></router-outlet>
+
+          <app-toasts aria-live="polite" aria-atomic="true"></app-toasts>
+
+
+          <br><br>
+          <app-footer-menu></app-footer-menu>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
